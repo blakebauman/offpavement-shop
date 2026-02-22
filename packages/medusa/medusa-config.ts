@@ -2,14 +2,16 @@ import { loadEnv, defineConfig } from '@medusajs/framework/utils'
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 const config = defineConfig({
   admin: {},
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
-    databaseDriverOptions: {
-      ssl: false,
-      sslmode: 'disable',
-    },
+    databaseDriverOptions: isProduction
+      ? { ssl: { rejectUnauthorized: false } }
+      : { ssl: false },
+    redisUrl: process.env.REDIS_URL,
     http: {
       storeCors: process.env.STORE_CORS!,
       adminCors: process.env.ADMIN_CORS!,

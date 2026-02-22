@@ -9,6 +9,7 @@
     "dev": "concurrently \"pnpm dev:medusa\" \"pnpm dev:storefront\"",
     "dev:medusa": "pnpm --filter @offpavement/medusa dev",
     "dev:storefront": "pnpm --filter @offpavement/storefront dev",
+    "dev:sanity": "pnpm --filter @offpavement/sanity-studio dev",
     "build": "pnpm -r build",
     "db:migrate": "pnpm --filter @offpavement/medusa exec medusa db:migrate",
     "db:generate": "pnpm --filter @offpavement/medusa exec medusa db:generate",
