@@ -1,0 +1,9 @@
+{
+  "name": "@offpavement/admin",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Medusa admin customizations (extended from default)",
+  "scripts": {
+    "dev": "echo 'Admin runs at packages/medusa - use pnpm dev:medusa'"
+  }
+}

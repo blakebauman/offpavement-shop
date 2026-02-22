@@ -1,0 +1,26 @@
+{
+  "name": "offpavement-shop",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f",
+    "dev": "concurrently \"pnpm dev:medusa\" \"pnpm dev:storefront\"",
+    "dev:medusa": "pnpm --filter @offpavement/medusa dev",
+    "dev:storefront": "pnpm --filter @offpavement/storefront dev",
+    "build": "pnpm -r build",
+    "db:migrate": "pnpm --filter @offpavement/medusa exec medusa db:migrate",
+    "db:generate": "pnpm --filter @offpavement/medusa exec medusa db:generate",
+    "db:sync-links": "pnpm --filter @offpavement/medusa exec medusa db:sync-links",
+    "seed": "pnpm --filter @offpavement/medusa exec medusa exec ./src/scripts/seed.ts",
+    "search:setup": "pnpm --filter @offpavement/medusa exec medusa exec ./src/scripts/meilisearch-setup.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.14.2",
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

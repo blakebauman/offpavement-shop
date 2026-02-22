@@ -1,0 +1,67 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: offpavement_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: offpavement_store
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - offpavement_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - offpavement_dev
+
+  redis:
+    image: redis:7-alpine
+    container_name: offpavement_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - offpavement_dev
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    container_name: offpavement_meilisearch
+    restart: unless-stopped
+    environment:
+      MEILI_MASTER_KEY: meili_master_key_dev
+      MEILI_ENV: development
+    ports:
+      - "7700:7700"
+    volumes:
+      - offpavement_meili_data:/meili_data
+    networks:
+      - offpavement_dev
+
+  minio:
+    image: minio/minio:latest
+    container_name: offpavement_minio
+    restart: unless-stopped
+    command: server /data
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9001:9000"
+    volumes:
+      - offpavement_minio_data:/data
+    networks:
+      - offpavement_dev
+
+volumes:
+  offpavement_postgres_data:
+  offpavement_meili_data:
+  offpavement_minio_data:
+
+networks:
+  offpavement_dev:
+    driver: bridge
