@@ -1,0 +1,631 @@
+{
+  "brand": "Wolf Tooth Components",
+  "categories": [
+    {
+      "name": "Chainrings",
+      "handle": "wt-chainrings",
+      "subcategories": [
+        { "name": "Mountain Chainrings", "handle": "wt-chainrings-mtb" },
+        { "name": "Road/Gravel Chainrings", "handle": "wt-chainrings-road" }
+      ]
+    },
+    { "name": "Dropper Levers", "handle": "wt-dropper-levers" },
+    { "name": "Tools", "handle": "wt-tools" },
+    { "name": "Pedals", "handle": "wt-pedals" },
+    { "name": "Headsets", "handle": "wt-headsets" },
+    { "name": "Chain Guides", "handle": "wt-chain-guides" },
+    { "name": "Grips & Bar Tape", "handle": "wt-grips" },
+    { "name": "Accessories", "handle": "wt-accessories" }
+  ],
+  "products": [
+    {
+      "title": "Wolf Tooth ReMote Pro",
+      "handle": "wolf-tooth-remote-pro",
+      "description": "The ReMote Pro is the most advanced dropper lever on the market, featuring a sealed 21mm cartridge bearing pivot for smooth, consistent action. Compatible with all cable-actuated dropper posts. The ergonomic paddle design allows intuitive activation without removing hands from the grips.",
+      "category_handles": ["wt-dropper-levers"],
+      "weight": 35,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/ReMote-Pro-MatchMaker-Black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Mount Type", "values": ["Clamp", "I-Spec II", "I-Spec EV", "MatchMaker X"] },
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold", "Pink"] }
+      ],
+      "variants": [
+        {
+          "title": "Clamp / Black",
+          "sku": "WT-REMOTE-PRO-CLAMP-BLK",
+          "options": { "Mount Type": "Clamp", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "Clamp / Red",
+          "sku": "WT-REMOTE-PRO-CLAMP-RED",
+          "options": { "Mount Type": "Clamp", "Color": "Red" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "Clamp / Blue",
+          "sku": "WT-REMOTE-PRO-CLAMP-BLU",
+          "options": { "Mount Type": "Clamp", "Color": "Blue" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "I-Spec II / Black",
+          "sku": "WT-REMOTE-PRO-IS2-BLK",
+          "options": { "Mount Type": "I-Spec II", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "I-Spec EV / Black",
+          "sku": "WT-REMOTE-PRO-ISEV-BLK",
+          "options": { "Mount Type": "I-Spec EV", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "MatchMaker X / Black",
+          "sku": "WT-REMOTE-PRO-MMX-BLK",
+          "options": { "Mount Type": "MatchMaker X", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 35,
+        "price_tier": "premium"
+      }
+    },
+    {
+      "title": "Wolf Tooth ReMote Light Action",
+      "handle": "wolf-tooth-remote-light-action",
+      "description": "The ReMote Light Action features the same sealed bearing pivot as the Pro, but with a redesigned paddle that reduces actuation force by 50%. Perfect for riders who prefer a lighter touch or those with hand fatigue issues.",
+      "category_handles": ["wt-dropper-levers"],
+      "weight": 35,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/ReMote-Light-Action-Clamp-Black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Mount Type", "values": ["Clamp", "I-Spec II", "I-Spec EV", "MatchMaker X"] },
+        { "title": "Color", "values": ["Black", "Red"] }
+      ],
+      "variants": [
+        {
+          "title": "Clamp / Black",
+          "sku": "WT-REMOTE-LA-CLAMP-BLK",
+          "options": { "Mount Type": "Clamp", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "Clamp / Red",
+          "sku": "WT-REMOTE-LA-CLAMP-RED",
+          "options": { "Mount Type": "Clamp", "Color": "Red" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "I-Spec II / Black",
+          "sku": "WT-REMOTE-LA-IS2-BLK",
+          "options": { "Mount Type": "I-Spec II", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "I-Spec EV / Black",
+          "sku": "WT-REMOTE-LA-ISEV-BLK",
+          "options": { "Mount Type": "I-Spec EV", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "MatchMaker X / Black",
+          "sku": "WT-REMOTE-LA-MMX-BLK",
+          "options": { "Mount Type": "MatchMaker X", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 35,
+        "price_tier": "premium"
+      }
+    },
+    {
+      "title": "Wolf Tooth 8-Bit Pack Pliers",
+      "handle": "wolf-tooth-8-bit-pack-pliers",
+      "description": "The ultimate bikepacking multi-tool. Features a patented master link plier design that makes chain repair simple. Includes 8 essential bits, chain breaker, valve core remover, and spoke wrench. The compact design fits easily in a jersey pocket or frame bag.",
+      "category_handles": ["wt-tools"],
+      "weight": 153,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/8-Bit-Pack-Pliers-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold"] }
+      ],
+      "variants": [
+        {
+          "title": "Black",
+          "sku": "WT-8BIT-PP-BLK",
+          "options": { "Color": "Black" },
+          "prices": [{ "amount": 7995, "currency_code": "usd" }]
+        },
+        {
+          "title": "Red",
+          "sku": "WT-8BIT-PP-RED",
+          "options": { "Color": "Red" },
+          "prices": [{ "amount": 7995, "currency_code": "usd" }]
+        },
+        {
+          "title": "Blue",
+          "sku": "WT-8BIT-PP-BLU",
+          "options": { "Color": "Blue" },
+          "prices": [{ "amount": 7995, "currency_code": "usd" }]
+        },
+        {
+          "title": "Purple",
+          "sku": "WT-8BIT-PP-PUR",
+          "options": { "Color": "Purple" },
+          "prices": [{ "amount": 7995, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 153,
+        "price_tier": "premium"
+      }
+    },
+    {
+      "title": "Wolf Tooth 6-Bit Hex Wrench Multi-Tool",
+      "handle": "wolf-tooth-6-bit-hex-wrench",
+      "description": "A beautifully machined multi-tool featuring 6 essential hex sizes. CNC machined from 6061 aluminum with hardened S2 tool steel bits. Compact enough for a jersey pocket.",
+      "category_handles": ["wt-tools"],
+      "weight": 52,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/6-Bit-Hex-Wrench-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold"] }
+      ],
+      "variants": [
+        {
+          "title": "Black",
+          "sku": "WT-6BIT-HEX-BLK",
+          "options": { "Color": "Black" },
+          "prices": [{ "amount": 3995, "currency_code": "usd" }]
+        },
+        {
+          "title": "Red",
+          "sku": "WT-6BIT-HEX-RED",
+          "options": { "Color": "Red" },
+          "prices": [{ "amount": 3995, "currency_code": "usd" }]
+        },
+        {
+          "title": "Blue",
+          "sku": "WT-6BIT-HEX-BLU",
+          "options": { "Color": "Blue" },
+          "prices": [{ "amount": 3995, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 52,
+        "price_tier": "mid"
+      }
+    },
+    {
+      "title": "Wolf Tooth GnarWolf Chainguide",
+      "handle": "wolf-tooth-gnarwolf-chainguide",
+      "description": "The GnarWolf chainguide provides maximum chain retention for aggressive riding. Features a replaceable skid plate and works with chainrings from 28T to 38T. ISCG05 mount compatible.",
+      "category_handles": ["wt-chain-guides"],
+      "weight": 58,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/GnarWolf-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Mount", "values": ["ISCG05"] },
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold"] }
+      ],
+      "variants": [
+        {
+          "title": "ISCG05 / Black",
+          "sku": "WT-GNARWOLF-ISCG-BLK",
+          "options": { "Mount": "ISCG05", "Color": "Black" },
+          "prices": [{ "amount": 7495, "currency_code": "usd" }]
+        },
+        {
+          "title": "ISCG05 / Red",
+          "sku": "WT-GNARWOLF-ISCG-RED",
+          "options": { "Mount": "ISCG05", "Color": "Red" },
+          "prices": [{ "amount": 7495, "currency_code": "usd" }]
+        },
+        {
+          "title": "ISCG05 / Blue",
+          "sku": "WT-GNARWOLF-ISCG-BLU",
+          "options": { "Mount": "ISCG05", "Color": "Blue" },
+          "prices": [{ "amount": 7495, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 58,
+        "price_tier": "premium"
+      }
+    },
+    {
+      "title": "Wolf Tooth Direct Mount Chainring for SRAM",
+      "handle": "wolf-tooth-dm-chainring-sram",
+      "description": "Direct mount chainring designed for SRAM cranks with their proprietary 3-bolt direct mount interface. Features Wolf Tooth's renowned drop-stop tooth profile for superior chain retention. Available in multiple tooth counts for optimal gearing.",
+      "category_handles": ["wt-chainrings", "wt-chainrings-mtb"],
+      "weight": 48,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/SRAM-DM-Chainring-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Tooth Count", "values": ["28T", "30T", "32T", "34T", "36T", "38T"] },
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold"] }
+      ],
+      "variants": [
+        {
+          "title": "28T / Black",
+          "sku": "WT-SRAM-DM-28-BLK",
+          "options": { "Tooth Count": "28T", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "30T / Black",
+          "sku": "WT-SRAM-DM-30-BLK",
+          "options": { "Tooth Count": "30T", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "32T / Black",
+          "sku": "WT-SRAM-DM-32-BLK",
+          "options": { "Tooth Count": "32T", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "34T / Black",
+          "sku": "WT-SRAM-DM-34-BLK",
+          "options": { "Tooth Count": "34T", "Color": "Black" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "32T / Red",
+          "sku": "WT-SRAM-DM-32-RED",
+          "options": { "Tooth Count": "32T", "Color": "Red" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        },
+        {
+          "title": "32T / Blue",
+          "sku": "WT-SRAM-DM-32-BLU",
+          "options": { "Tooth Count": "32T", "Color": "Blue" },
+          "prices": [{ "amount": 6995, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 48,
+        "price_tier": "mid"
+      }
+    },
+    {
+      "title": "Wolf Tooth Direct Mount Chainring for Shimano",
+      "handle": "wolf-tooth-dm-chainring-shimano",
+      "description": "Direct mount chainring designed for Shimano cranks with their direct mount interface. Drop-stop tooth profile ensures chain stays put on the roughest terrain. Compatible with Shimano 12-speed drivetrains.",
+      "category_handles": ["wt-chainrings", "wt-chainrings-mtb"],
+      "weight": 52,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/Shimano-DM-Chainring-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Tooth Count", "values": ["30T", "32T", "34T", "36T"] },
+        { "title": "Color", "values": ["Black", "Red", "Blue"] }
+      ],
+      "variants": [
+        {
+          "title": "30T / Black",
+          "sku": "WT-SHIM-DM-30-BLK",
+          "options": { "Tooth Count": "30T", "Color": "Black" },
+          "prices": [{ "amount": 7495, "currency_code": "usd" }]
+        },
+        {
+          "title": "32T / Black",
+          "sku": "WT-SHIM-DM-32-BLK",
+          "options": { "Tooth Count": "32T", "Color": "Black" },
+          "prices": [{ "amount": 7495, "currency_code": "usd" }]
+        },
+        {
+          "title": "34T / Black",
+          "sku": "WT-SHIM-DM-34-BLK",
+          "options": { "Tooth Count": "34T", "Color": "Black" },
+          "prices": [{ "amount": 7495, "currency_code": "usd" }]
+        },
+        {
+          "title": "32T / Red",
+          "sku": "WT-SHIM-DM-32-RED",
+          "options": { "Tooth Count": "32T", "Color": "Red" },
+          "prices": [{ "amount": 7495, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 52,
+        "price_tier": "mid"
+      }
+    },
+    {
+      "title": "Wolf Tooth Waveform Pedals",
+      "handle": "wolf-tooth-waveform-pedals",
+      "description": "Large platform aluminum pedals with a unique wave pattern for superior grip. Features a thin 12.7mm profile and sealed bearings. The concave shape keeps your foot planted on technical terrain.",
+      "category_handles": ["wt-pedals"],
+      "weight": 374,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/Waveform-Pedals-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Size", "values": ["Small", "Large"] },
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold"] }
+      ],
+      "variants": [
+        {
+          "title": "Large / Black",
+          "sku": "WT-WAVE-LG-BLK",
+          "options": { "Size": "Large", "Color": "Black" },
+          "prices": [{ "amount": 17900, "currency_code": "usd" }]
+        },
+        {
+          "title": "Large / Red",
+          "sku": "WT-WAVE-LG-RED",
+          "options": { "Size": "Large", "Color": "Red" },
+          "prices": [{ "amount": 17900, "currency_code": "usd" }]
+        },
+        {
+          "title": "Large / Blue",
+          "sku": "WT-WAVE-LG-BLU",
+          "options": { "Size": "Large", "Color": "Blue" },
+          "prices": [{ "amount": 17900, "currency_code": "usd" }]
+        },
+        {
+          "title": "Small / Black",
+          "sku": "WT-WAVE-SM-BLK",
+          "options": { "Size": "Small", "Color": "Black" },
+          "prices": [{ "amount": 17900, "currency_code": "usd" }]
+        },
+        {
+          "title": "Small / Red",
+          "sku": "WT-WAVE-SM-RED",
+          "options": { "Size": "Small", "Color": "Red" },
+          "prices": [{ "amount": 17900, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 374,
+        "price_tier": "premium"
+      }
+    },
+    {
+      "title": "Wolf Tooth Premium Headset",
+      "handle": "wolf-tooth-premium-headset",
+      "description": "CNC machined headset with sealed cartridge bearings. ZS44/EC44 sizing fits most modern mountain bikes. Features a precision-machined crown race and included compression ring.",
+      "category_handles": ["wt-headsets"],
+      "weight": 125,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/Premium-Headset-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Size", "values": ["ZS44/EC44", "ZS44/ZS44", "EC34/EC44"] },
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold"] }
+      ],
+      "variants": [
+        {
+          "title": "ZS44/EC44 / Black",
+          "sku": "WT-HS-ZS44EC44-BLK",
+          "options": { "Size": "ZS44/EC44", "Color": "Black" },
+          "prices": [{ "amount": 10900, "currency_code": "usd" }]
+        },
+        {
+          "title": "ZS44/EC44 / Red",
+          "sku": "WT-HS-ZS44EC44-RED",
+          "options": { "Size": "ZS44/EC44", "Color": "Red" },
+          "prices": [{ "amount": 10900, "currency_code": "usd" }]
+        },
+        {
+          "title": "ZS44/EC44 / Blue",
+          "sku": "WT-HS-ZS44EC44-BLU",
+          "options": { "Size": "ZS44/EC44", "Color": "Blue" },
+          "prices": [{ "amount": 10900, "currency_code": "usd" }]
+        },
+        {
+          "title": "ZS44/ZS44 / Black",
+          "sku": "WT-HS-ZS44ZS44-BLK",
+          "options": { "Size": "ZS44/ZS44", "Color": "Black" },
+          "prices": [{ "amount": 10900, "currency_code": "usd" }]
+        },
+        {
+          "title": "EC34/EC44 / Black",
+          "sku": "WT-HS-EC34EC44-BLK",
+          "options": { "Size": "EC34/EC44", "Color": "Black" },
+          "prices": [{ "amount": 10900, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 125,
+        "price_tier": "premium"
+      }
+    },
+    {
+      "title": "Wolf Tooth Supple Bar Tape",
+      "handle": "wolf-tooth-supple-bar-tape",
+      "description": "Premium silicone-based bar tape with exceptional grip and vibration damping. 3mm thick for comfort on long gravel rides. Includes bar-end plugs and finishing tape.",
+      "category_handles": ["wt-grips"],
+      "weight": 75,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/Supple-Bar-Tape-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green"] }
+      ],
+      "variants": [
+        {
+          "title": "Black",
+          "sku": "WT-SUPPLE-TAPE-BLK",
+          "options": { "Color": "Black" },
+          "prices": [{ "amount": 3495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Red",
+          "sku": "WT-SUPPLE-TAPE-RED",
+          "options": { "Color": "Red" },
+          "prices": [{ "amount": 3495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Blue",
+          "sku": "WT-SUPPLE-TAPE-BLU",
+          "options": { "Color": "Blue" },
+          "prices": [{ "amount": 3495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Orange",
+          "sku": "WT-SUPPLE-TAPE-ORG",
+          "options": { "Color": "Orange" },
+          "prices": [{ "amount": 3495, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 75,
+        "price_tier": "mid"
+      }
+    },
+    {
+      "title": "Wolf Tooth Fat Paw Grips",
+      "handle": "wolf-tooth-fat-paw-grips",
+      "description": "Extra-thick 9.5mm grips for maximum comfort and vibration damping. Lock-on design with a single clamp keeps them secure. Perfect for riders who want more cushion on long rides.",
+      "category_handles": ["wt-grips"],
+      "weight": 135,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/Fat-Paw-Grips-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold"] }
+      ],
+      "variants": [
+        {
+          "title": "Black",
+          "sku": "WT-FATPAW-BLK",
+          "options": { "Color": "Black" },
+          "prices": [{ "amount": 2495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Red",
+          "sku": "WT-FATPAW-RED",
+          "options": { "Color": "Red" },
+          "prices": [{ "amount": 2495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Blue",
+          "sku": "WT-FATPAW-BLU",
+          "options": { "Color": "Blue" },
+          "prices": [{ "amount": 2495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Purple",
+          "sku": "WT-FATPAW-PUR",
+          "options": { "Color": "Purple" },
+          "prices": [{ "amount": 2495, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 135,
+        "price_tier": "budget"
+      }
+    },
+    {
+      "title": "Wolf Tooth B-RAD Mounting System",
+      "handle": "wolf-tooth-b-rad-mounting-system",
+      "description": "Modular mounting system using standard bottle cage mounts. The B-RAD base creates additional mounting points for accessories, tools, or storage. Essential for bikepacking setups.",
+      "category_handles": ["wt-accessories"],
+      "weight": 35,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/B-RAD-System-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Type", "values": ["B-RAD 2", "B-RAD 3", "B-RAD 4"] }
+      ],
+      "variants": [
+        {
+          "title": "B-RAD 2",
+          "sku": "WT-BRAD-2",
+          "options": { "Type": "B-RAD 2" },
+          "prices": [{ "amount": 2495, "currency_code": "usd" }]
+        },
+        {
+          "title": "B-RAD 3",
+          "sku": "WT-BRAD-3",
+          "options": { "Type": "B-RAD 3" },
+          "prices": [{ "amount": 2795, "currency_code": "usd" }]
+        },
+        {
+          "title": "B-RAD 4",
+          "sku": "WT-BRAD-4",
+          "options": { "Type": "B-RAD 4" },
+          "prices": [{ "amount": 3295, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 35,
+        "price_tier": "budget"
+      }
+    },
+    {
+      "title": "Wolf Tooth Valve Stem Caps",
+      "handle": "wolf-tooth-valve-stem-caps",
+      "description": "CNC machined aluminum valve stem caps with integrated valve core removal tool. Set of 2 caps. A small upgrade that adds style and function.",
+      "category_handles": ["wt-accessories"],
+      "weight": 4,
+      "images": [
+        { "url": "https://www.wolftoothcomponents.com/cdn/shop/files/Valve-Stem-Caps-black_1200x.jpg" }
+      ],
+      "options": [
+        { "title": "Color", "values": ["Black", "Red", "Blue", "Purple", "Orange", "Green", "Gold"] }
+      ],
+      "variants": [
+        {
+          "title": "Black",
+          "sku": "WT-VALVE-CAP-BLK",
+          "options": { "Color": "Black" },
+          "prices": [{ "amount": 1495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Red",
+          "sku": "WT-VALVE-CAP-RED",
+          "options": { "Color": "Red" },
+          "prices": [{ "amount": 1495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Blue",
+          "sku": "WT-VALVE-CAP-BLU",
+          "options": { "Color": "Blue" },
+          "prices": [{ "amount": 1495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Purple",
+          "sku": "WT-VALVE-CAP-PUR",
+          "options": { "Color": "Purple" },
+          "prices": [{ "amount": 1495, "currency_code": "usd" }]
+        },
+        {
+          "title": "Gold",
+          "sku": "WT-VALVE-CAP-GLD",
+          "options": { "Color": "Gold" },
+          "prices": [{ "amount": 1495, "currency_code": "usd" }]
+        }
+      ],
+      "metadata": {
+        "brand": "Wolf Tooth Components",
+        "weight_grams": 4,
+        "price_tier": "budget"
+      }
+    }
+  ]
+}
