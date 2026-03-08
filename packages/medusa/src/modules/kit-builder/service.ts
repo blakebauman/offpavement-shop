@@ -113,6 +113,14 @@ class KitBuilderModuleService extends MedusaService({
   async listKitsBySession(sessionId: string) {
     return this.listSavedKits({ session_id: sessionId })
   }
+
+  async linkSessionToCustomer(sessionId: string, customerId: string) {
+    const kits = await this.listSavedKits({ session_id: sessionId })
+    if (kits.length === 0) return
+    for (const kit of kits) {
+      await this.updateSavedKits({ id: kit.id, customer_id: customerId, session_id: null } as any)
+    }
+  }
 }
 
 export default KitBuilderModuleService

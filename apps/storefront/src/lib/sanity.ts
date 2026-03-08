@@ -38,3 +38,47 @@ export async function getProductBrief(medusaProductId: string) {
     return null
   }
 }
+
+export interface SanityGuide {
+  _id: string
+  slug?: { current?: string }
+  title?: string
+  description?: string
+  publishedAt?: string
+  content?: unknown
+  featured?: boolean
+  category?: string
+}
+
+export async function getGuides(): Promise<SanityGuide[]> {
+  if (!client || !projectId) return []
+  try {
+    const guides = await client.fetch<SanityGuide[]>(
+      `*[_type == "guide" && defined(publishedAt)] | order(publishedAt desc) {
+        _id,
+        "slug": slug,
+        title,
+        description,
+        publishedAt,
+        featured,
+        category
+      }`
+    )
+    return guides ?? []
+  } catch {
+    return []
+  }
+}
+
+export async function getGuideBySlug(slug: string): Promise<SanityGuide | null> {
+  if (!client || !projectId) return null
+  try {
+    const guide = await client.fetch<SanityGuide | null>(
+      `*[_type == "guide" && slug.current == $slug][0]`,
+      { slug }
+    )
+    return guide
+  } catch {
+    return null
+  }
+}

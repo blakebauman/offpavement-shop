@@ -9,6 +9,11 @@ interface ProductRec {
   price_tier?: string
 }
 
+interface ProductDetail {
+  thumbnail?: string | null
+  priceFormatted?: string
+}
+
 export function KitSlotCard({
   slotName,
   recommended,
@@ -17,6 +22,7 @@ export function KitSlotCard({
   onSwap,
   owned,
   onToggleOwned,
+  productDetail,
 }: {
   slotName: string
   recommended: ProductRec
@@ -25,6 +31,7 @@ export function KitSlotCard({
   onSwap: (slot: string, productId: string) => void
   owned: boolean
   onToggleOwned: () => void
+  productDetail?: ProductDetail | null
 }) {
   const [expanded, setExpanded] = useState(false)
   const displayProduct =
@@ -50,13 +57,29 @@ export function KitSlotCard({
 
       {!owned && (
         <>
-          <div className="mt-2 flex items-center gap-2">
-            <span className="text-sm">{displayProduct.title ?? displayProduct.id}</span>
-            {displayProduct.weight_grams != null && (
-              <span className="text-xs text-gray-500">
-                {displayProduct.weight_grams}g
-              </span>
+          <div className="mt-2 flex items-start gap-3">
+            {productDetail?.thumbnail && (
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded bg-gray-100">
+                <img
+                  src={productDetail.thumbnail}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
             )}
+            <div className="min-w-0 flex-1">
+              <span className="text-sm">{displayProduct.title ?? displayProduct.id}</span>
+              {displayProduct.weight_grams != null && (
+                <span className="ml-2 text-xs text-gray-500">
+                  {displayProduct.weight_grams}g
+                </span>
+              )}
+              {productDetail?.priceFormatted && (
+                <p className="mt-1 text-sm font-medium text-gray-700">
+                  {productDetail.priceFormatted}
+                </p>
+              )}
+            </div>
           </div>
 
           {alternatives.length > 0 && (

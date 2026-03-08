@@ -4,7 +4,7 @@
  */
 import type { ExecArgs } from "@medusajs/framework/types"
 import { Modules } from "@medusajs/framework/utils"
-import { getMeilisearchClient, INDEX_NAME, buildMeilisearchDocument } from "../subscribers/meilisearch-utils"
+import { getMeilisearchClient, INDEX_NAME, buildMeilisearchDocument } from "../lib/meilisearch-utils"
 
 export default async function meilisearchSetup({ container }: ExecArgs) {
   const client = await getMeilisearchClient()

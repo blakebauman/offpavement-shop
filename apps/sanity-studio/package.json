@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "sanity dev",
-    "build": "sanity build",
+    "build": "npx sanity build",
     "deploy": "sanity deploy",
     "start": "sanity start"
   },

@@ -59,6 +59,8 @@ offpavement-shop/
 
 - `pnpm docker:up` — Start Docker services
 - `pnpm docker:down` — Stop Docker services
+- `pnpm docker:build` — Build Medusa Docker image (run from repo root)
+- `pnpm docker:clean` — Stop services and remove volumes
 - `pnpm dev` — Run Medusa + storefront
 - `pnpm dev:medusa` — Run Medusa only
 - `pnpm dev:storefront` — Run storefront only

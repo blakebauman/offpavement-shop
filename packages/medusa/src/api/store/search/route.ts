@@ -1,5 +1,5 @@
 import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { getMeilisearchClient, INDEX_NAME } from "../../../subscribers/meilisearch-utils"
+import { getMeilisearchClient, INDEX_NAME } from "../../../lib/meilisearch-utils"
 
 export async function GET(req: MedusaRequest, res: MedusaResponse) {
   const client = await getMeilisearchClient()

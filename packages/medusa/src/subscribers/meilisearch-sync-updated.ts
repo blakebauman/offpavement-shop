@@ -4,7 +4,7 @@ import {
   buildMeilisearchDocument,
   getProductFromContainer,
   INDEX_NAME,
-} from "./meilisearch-utils"
+} from "../lib/meilisearch-utils"
 
 export default async function meilisearchSyncUpdatedHandler({
   event: { data },

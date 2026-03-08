@@ -1,7 +1,7 @@
 FROM node:20-alpine AS base
 
 # Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@9.14.2 --activate
 
 WORKDIR /app
 
@@ -22,13 +22,19 @@ RUN pnpm build
 # Production image
 FROM node:20-alpine AS production
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@9.14.2 --activate
+
+RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001 -G nodejs
 
 WORKDIR /app/packages/medusa
 
 # Copy built application
 COPY --from=base /app/node_modules /app/node_modules
 COPY --from=base /app/packages/medusa /app/packages/medusa
+
+RUN chown -R nodejs:nodejs /app
+
+USER nodejs
 
 EXPOSE 9000
 

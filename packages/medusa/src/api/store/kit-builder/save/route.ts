@@ -1,44 +1,42 @@
 import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
 import { randomUUID } from "node:crypto"
-import { KIT_BUILDER_MODULE } from "../../../../modules/kit-builder"
-import type KitBuilderModuleService from "../../../../modules/kit-builder/service"
+import { saveKitSchema } from "../schemas"
+import { saveKitWorkflow } from "../../../../workflows/save-kit"
 
 export async function POST(req: MedusaRequest, res: MedusaResponse) {
-  const kitBuilderService: KitBuilderModuleService = req.scope.resolve(
-    KIT_BUILDER_MODULE
-  )
-
-  const body = req.body as Record<string, unknown>
-  if (!body.bike_profile || !body.trip_profile || !body.preferences || !body.slots || body.total_weight_grams == null || body.total_cost == null) {
+  const parsed = saveKitSchema.safeParse(req.body)
+  if (!parsed.success) {
     res.status(400).json({
-      message: "Missing required fields",
+      message: "Validation failed",
+      errors: parsed.error.flatten().fieldErrors,
     })
     return
   }
 
-  const customerId = (req as any).auth?.actor_id ?? null
+  const customerId =
+    (req as MedusaRequest & { auth?: { actor_id?: string } }).auth?.actor_id ??
+    null
   const sessionId = req.cookies?.kit_session ?? randomUUID()
 
   try {
-    const kit = await kitBuilderService.createSavedKit({
-      customer_id: customerId,
-      session_id: sessionId,
-      bike_profile: body.bike_profile as any,
-      trip_profile: body.trip_profile as any,
-      preferences: body.preferences as any,
-      slots: body.slots as any,
-      total_weight_grams: body.total_weight_grams as number,
-      total_cost: body.total_cost as number,
+    const { result: kit } = await saveKitWorkflow(req.scope).run({
+      input: {
+        customer_id: customerId,
+        session_id: sessionId,
+        bike_profile: parsed.data.bike_profile,
+        trip_profile: parsed.data.trip_profile,
+        preferences: parsed.data.preferences,
+        slots: parsed.data.slots,
+        total_weight_grams: parsed.data.total_weight_grams,
+        total_cost: parsed.data.total_cost,
+      },
     })
 
-    if (typeof kit === "object" && "id" in kit) {
-      res.setHeader("Set-Cookie", `kit_session=${sessionId}; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000`)
-      res.json({ kit })
-    } else {
-      const [created] = Array.isArray(kit) ? kit : [kit]
-      res.setHeader("Set-Cookie", `kit_session=${sessionId}; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000`)
-      res.json({ kit: created })
-    }
+    res.setHeader(
+      "Set-Cookie",
+      `kit_session=${sessionId}; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000`
+    )
+    res.json({ kit })
   } catch (err) {
     console.error("Kit save error:", err)
     res.status(500).json({ message: "Failed to save kit" })

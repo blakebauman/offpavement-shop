@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { fetchKitBuilderRecommendations, saveKit } from "@lib/medusa-client"
 import { addKitToCart } from "@lib/data/cart"
+import { getProductsByIds } from "@lib/data/products"
+import { getProductPrice } from "@lib/util/get-product-price"
 import type { BikeProfile, TripProfile, RiderPreferences } from "../types"
 import { KitSlotCard } from "./kit-slot-card"
 import { useRouter } from "next/navigation"
@@ -12,6 +14,12 @@ interface ProductRec {
   title?: string
   weight_grams?: number
   price_tier?: string
+}
+
+interface ProductDetails {
+  thumbnail?: string | null
+  priceAmount: number
+  priceFormatted: string
 }
 
 interface Recommendations {
@@ -44,6 +52,8 @@ export function KitOutputView({
   const [addingToCart, setAddingToCart] = useState(false)
   const [addToCartMessage, setAddToCartMessage] = useState<string | null>(null)
   const [shareCopied, setShareCopied] = useState(false)
+  const [productDetails, setProductDetails] = useState<Record<string, ProductDetails>>({})
+  const [totalCost, setTotalCost] = useState(0)
 
   useEffect(() => {
     fetchKitBuilderRecommendations({
@@ -62,6 +72,40 @@ export function KitOutputView({
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false))
   }, [bikeProfile, tripProfile, preferences])
+
+  useEffect(() => {
+    if (!recommendations || !countryCode) return
+    const productIds = Object.entries(selectedProducts)
+      .filter(([slot]) => !ownedSlots.has(slot))
+      .map(([, id]) => id)
+      .filter(Boolean)
+    if (productIds.length === 0) {
+      setProductDetails({})
+      setTotalCost(0)
+      return
+    }
+    getProductsByIds({ ids: [...new Set(productIds)], countryCode })
+      .then((products) => {
+        const details: Record<string, ProductDetails> = {}
+        let sum = 0
+        for (const p of products) {
+          const { cheapestPrice } = getProductPrice({ product: p })
+          const amount = cheapestPrice?.calculated_price_number ?? 0
+          details[p.id] = {
+            thumbnail: p.thumbnail ?? (p.images?.[0] as { url?: string } | undefined)?.url ?? null,
+            priceAmount: amount,
+            priceFormatted: cheapestPrice?.calculated_price ?? "$0",
+          }
+          sum += amount
+        }
+        setProductDetails(details)
+        setTotalCost(sum)
+      })
+      .catch(() => {
+        setProductDetails({})
+        setTotalCost(0)
+      })
+  }, [recommendations, selectedProducts, ownedSlots, countryCode])
 
   const totalWeight = recommendations
     ? Object.entries(selectedProducts).reduce((sum, [slot, productId]) => {
@@ -98,7 +142,7 @@ export function KitOutputView({
         preferences,
         slots,
         total_weight_grams: totalWeight,
-        total_cost: 0,
+        total_cost: totalCost,
       })
       if (kit?.share_token) {
         const shareUrl = `${typeof window !== "undefined" ? window.location.origin : ""}/${countryCode}/kit-builder/${kit.share_token}`
@@ -192,6 +236,11 @@ export function KitOutputView({
         </p>
         <p className="mt-2 text-lg font-medium">
           Total weight: {(totalWeight / 1000).toFixed(1)} kg
+          {totalCost > 0 && (
+            <span className="ml-4">
+              Total: {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0 }).format(totalCost / 100)}
+            </span>
+          )}
         </p>
       </div>
 
@@ -206,6 +255,7 @@ export function KitOutputView({
             onSwap={handleSwap}
             owned={ownedSlots.has(slotName)}
             onToggleOwned={() => handleToggleOwned(slotName)}
+            productDetail={productDetails[selectedProducts[slotName] ?? rec.recommended.id]}
           />
         ))}
       </div>

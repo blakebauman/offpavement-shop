@@ -6,6 +6,8 @@
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
     "docker:logs": "docker compose logs -f",
+    "docker:build": "docker build -f packages/medusa/Dockerfile -t offpavement-medusa .",
+    "docker:clean": "docker compose down -v",
     "dev": "concurrently \"pnpm dev:medusa\" \"pnpm dev:storefront\"",
     "dev:medusa": "pnpm --filter @offpavement/medusa dev",
     "dev:storefront": "pnpm --filter @offpavement/storefront dev",

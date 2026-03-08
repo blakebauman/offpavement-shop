@@ -1,0 +1,10 @@
+.git
+node_modules
+**/node_modules
+**/__tests__
+**/*.test.*
+**/*.spec.*
+*.md
+.env*
+!.env.example
+.github

@@ -10,10 +10,12 @@ import {
   getCacheOptions,
   getCacheTag,
   getCartId,
+  getKitSession,
   removeAuthToken,
   removeCartId,
   setAuthToken,
 } from "./cookies"
+import { linkKitSession } from "@lib/medusa-client"
 
 export const retrieveCustomer =
   async (): Promise<HttpTypes.StoreCustomer | null> => {
@@ -98,6 +100,11 @@ export async function signup(_currentState: unknown, formData: FormData) {
 
     await transferCart()
 
+    const kitSession = await getKitSession()
+    if (kitSession) {
+      await linkKitSession(kitSession, loginToken as string)
+    }
+
     return createdCustomer
   } catch (error: any) {
     return error.toString()
@@ -109,19 +116,20 @@ export async function login(_currentState: unknown, formData: FormData) {
   const password = formData.get("password") as string
 
   try {
-    await sdk.auth
-      .login("customer", "emailpass", { email, password })
-      .then(async (token) => {
-        await setAuthToken(token as string)
-        const customerCacheTag = await getCacheTag("customers")
-        revalidateTag(customerCacheTag)
-      })
-  } catch (error: any) {
-    return error.toString()
-  }
+    const token = await sdk.auth.login("customer", "emailpass", {
+      email,
+      password,
+    })
+    await setAuthToken(token as string)
+    const customerCacheTag = await getCacheTag("customers")
+    revalidateTag(customerCacheTag)
 
-  try {
     await transferCart()
+
+    const kitSession = await getKitSession()
+    if (kitSession) {
+      await linkKitSession(kitSession, token as string)
+    }
   } catch (error: any) {
     return error.toString()
   }

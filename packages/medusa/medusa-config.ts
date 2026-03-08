@@ -3,6 +3,17 @@ import { loadEnv, defineConfig } from '@medusajs/framework/utils'
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 const isProduction = process.env.NODE_ENV === 'production'
+const defaultSecret = "supersecret"
+
+if (isProduction) {
+  const jwtSecret = process.env.JWT_SECRET || defaultSecret
+  const cookieSecret = process.env.COOKIE_SECRET || defaultSecret
+  if (jwtSecret === defaultSecret || cookieSecret === defaultSecret) {
+    throw new Error(
+      "Production requires JWT_SECRET and COOKIE_SECRET to be set and different from default"
+    )
+  }
+}
 
 const config = defineConfig({
   admin: {},
@@ -16,8 +27,8 @@ const config = defineConfig({
       storeCors: process.env.STORE_CORS!,
       adminCors: process.env.ADMIN_CORS!,
       authCors: process.env.AUTH_CORS!,
-      jwtSecret: process.env.JWT_SECRET || "supersecret",
-      cookieSecret: process.env.COOKIE_SECRET || "supersecret",
+      jwtSecret: process.env.JWT_SECRET || defaultSecret,
+      cookieSecret: process.env.COOKIE_SECRET || defaultSecret,
     }
   },
   modules: [

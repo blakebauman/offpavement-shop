@@ -71,6 +71,11 @@ export const getCartId = async () => {
   return cookies.get("_medusa_cart_id")?.value
 }
 
+export const getKitSession = async () => {
+  const cookies = await nextCookies()
+  return cookies.get("kit_session")?.value ?? null
+}
+
 export const setCartId = async (cartId: string) => {
   const cookies = await nextCookies()
   cookies.set("_medusa_cart_id", cartId, {

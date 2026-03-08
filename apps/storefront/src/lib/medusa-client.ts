@@ -108,3 +108,18 @@ export async function fetchKitByShareToken(shareToken: string) {
   if (!res.ok) return null
   return res.json()
 }
+
+/** Link anonymous kit session to customer after login. Call from server with authToken. */
+export async function linkKitSession(sessionId: string, authToken: string) {
+  const res = await fetch(`${MEDUSA_BACKEND_URL}/store/kit-builder/link-session`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-publishable-api-key": PUBLISHABLE_KEY,
+      Authorization: `Bearer ${authToken}`,
+    },
+    body: JSON.stringify({ session_id: sessionId }),
+  })
+  if (!res.ok) return
+  // Ignore errors - linking is best-effort
+}

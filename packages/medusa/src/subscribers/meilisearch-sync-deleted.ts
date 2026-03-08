@@ -1,5 +1,5 @@
 import type { SubscriberArgs, SubscriberConfig } from "@medusajs/framework"
-import { getMeilisearchClient, INDEX_NAME } from "./meilisearch-utils"
+import { getMeilisearchClient, INDEX_NAME } from "../lib/meilisearch-utils"
 
 export default async function meilisearchSyncDeletedHandler({
   event: { data },

@@ -78,6 +78,15 @@ Copy `.env.example` to `.env` (medusa) and `apps/storefront/.env.template` to `.
 - `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY` - Required for storefront API access
 - `SANITY_PROJECT_ID`, `SANITY_DATASET` - Optional Sanity CMS integration
 
+## Medusa Best Practices (Implemented)
+
+- **Workflows for writes**: Kit Builder save uses `saveKitWorkflow` (not direct service calls). Workflow in `src/workflows/save-kit.ts`.
+- **Query.graph for cross-module data**: Recommendations route uses `query.graph` with `productEditorial.*` for linked editorial data.
+- **Zod validation**: Kit Builder API inputs validated via `src/api/store/kit-builder/schemas.ts`. Returns structured `errors` on 400.
+- **Shared utilities**: Meilisearch helpers live in `src/lib/meilisearch-utils.ts` (not in `subscribers/`) to avoid loader treating them as subscribers.
+- **Production security**: `medusa-config.ts` throws at startup if `JWT_SECRET` or `COOKIE_SECRET` use defaults in production.
+- **Test environment**: `.env.test` requires `DB_HOST`, `DB_USERNAME`, `DB_PASSWORD`, `DB_PORT` for `@medusajs/test-utils` (pg-god).
+
 ## Adding New Modules
 
 1. Create module under `packages/medusa/src/modules/<name>/`
